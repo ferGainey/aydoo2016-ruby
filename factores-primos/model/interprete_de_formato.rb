@@ -6,11 +6,13 @@ class InterpreteDeFormato
   end
 
   def interpretar_formato
-  	@parametros.downcase!
-  	if @parametros == "--format=quiet"
-  	  return "quiet"
-    else
-      return "pretty"
+  	@parametros.each do |parametro_actual|
+  	  parametro_actual.downcase!
+  	  if parametro_actual == "--format=quiet"
+  	    return "quiet"
+      else
+        return "pretty"
+      end
     end
   end
 
