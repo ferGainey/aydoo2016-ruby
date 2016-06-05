@@ -43,8 +43,13 @@ describe 'InterpreteDeParametros' do
   #en esta parte voy a testear la interpretacion del orden
 
   it 'deberia retornar asc cuando se le pasa el parametro --sort=asc y se le pide que se interprete el orden' do
-    mi_interprete =  InterpreteDeParametros.new(["--sort=asc"])
+    mi_interprete =  InterpreteDeParametros.new(["--sort:asc"])
     expect(mi_interprete.interpretar_orden).to eq "asc"
+  end
+
+  it 'deberia retornar des cuando se le pasa el parametro --sort=des y se le pide que se interprete el orden' do
+    mi_interprete =  InterpreteDeParametros.new(["--sort:des"])
+    expect(mi_interprete.interpretar_orden).to eq "des"
   end
   
 end

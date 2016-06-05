@@ -6,7 +6,13 @@ class InterpreteDeOrden
   end
 
   def interpretar_orden
-  	return "asc"
+  	@parametros.each do |parametro_actual|
+      if parametro_actual == "--sort:des"
+        return "des"
+      else
+        return "asc"
+      end
+    end
   end
 
 end
