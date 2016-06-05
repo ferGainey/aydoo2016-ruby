@@ -65,22 +65,22 @@ describe 'InterpreteDeParametros' do
   #en esta parte voy a interpretar el tipo de salida deseado
 
   it 'deberia retornar el nombre del archivo cuando se le pasa el parametro --output-file=nombreDelArchivo y se le pide que se interprete la salida' do
-    mi_interprete =  InterpreteDeSalida.new(["--output-file=salida.txt"])
+    mi_interprete =  InterpreteDeParametros.new(["--output-file=salida.txt"])
     expect(mi_interprete.interpretar_salida).to eq "salida.txt"
   end
 
   it 'deberia retornar la ruta y el nombre del archivo cuando se le pasa el parametro --output-file=rutaDelArchivo y se le pide que se interprete la salida' do
-    mi_interprete =  InterpreteDeSalida.new(["--output-file=/home/fernando/salida.txt"])
+    mi_interprete =  InterpreteDeParametros.new(["--output-file=/home/fernando/salida.txt"])
     expect(mi_interprete.interpretar_salida).to eq "/home/fernando/salida.txt"
   end
 
   it 'deberia retornar consola si se le pide que se interprete la salida y no se le indica el tipo en ningun parametro' do
-    mi_interprete =  InterpreteDeSalida.new([""])
+    mi_interprete =  InterpreteDeParametros.new([""])
     expect(mi_interprete.interpretar_salida).to eq "consola"
   end
 
   it 'deberia retornar la ruta y el nombre del archivo cuando se le pasan varios parametros y --output-file=rutaDelArchivo y se le pide que se interprete la salida' do
-    mi_interprete =  InterpreteDeSalida.new(["--sort:des", "--output-file=/home/fernando/salida.txt", "--format=pretty"])
+    mi_interprete =  InterpreteDeParametros.new(["--sort:des", "--output-file=/home/fernando/salida.txt", "--format=pretty"])
     expect(mi_interprete.interpretar_salida).to eq "/home/fernando/salida.txt"
   end
 
