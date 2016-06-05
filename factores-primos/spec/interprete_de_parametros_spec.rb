@@ -62,4 +62,11 @@ describe 'InterpreteDeParametros' do
     expect(mi_interprete.interpretar_orden).to eq "des"
   end
 
+  #en esta parte voy a interpretar el tipo de salida deseado
+
+  it 'deberia retornar el nombre del archivo cuando se le pasa el parametro --output-file=nombreDelArchivo y se le pide que se interprete la salida' do
+    mi_interprete =  InterpreteDeSalida.new(["--output-file=salida.txt"])
+    expect(mi_interprete.interpretar_salida).to eq "salida.txt"
+  end
+
 end
