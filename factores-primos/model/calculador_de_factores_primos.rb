@@ -25,9 +25,9 @@ class CalculadorDeFactoresPrimos
 	  			return false
 	  		end
 	  		i-=1
-	  		break if i <= 2
+	  		break if i < 2
 	  	end
-	  		
+	  	return true	
 	  end
 
 	end
