@@ -13,4 +13,8 @@ describe 'InterpreteDeParametros' do
     expect(mi_interprete.interpretar_formato).to eq "pretty"
   end
 
+  it 'deberia retornar pretty cuando se le pasa el parametro --format=prEtTY u otra combinacion de mayus y min, y se le pide que se interprete el formato' do
+    mi_interprete =  InterpreteDeParametros.new("--format=prEtTY")
+    expect(mi_interprete.interpretar_formato).to eq "pretty"
+  end
 end
