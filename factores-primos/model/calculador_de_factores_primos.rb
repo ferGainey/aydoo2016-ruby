@@ -1,5 +1,6 @@
 class CalculadorDeFactoresPrimos
 
+	#falta modelar las excepciones
 	def calcular_divisores_primos(numero)
 	  divisores = []
 	  if es_primo?(numero)
