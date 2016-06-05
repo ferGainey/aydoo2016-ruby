@@ -79,4 +79,9 @@ describe 'InterpreteDeParametros' do
     expect(mi_interprete.interpretar_salida).to eq "consola"
   end
 
+  it 'deberia retornar la ruta y el nombre del archivo cuando se le pasan varios parametros y --output-file=rutaDelArchivo y se le pide que se interprete la salida' do
+    mi_interprete =  InterpreteDeSalida.new(["--sort:des", "--output-file=/home/fernando/salida.txt", "--format=pretty"])
+    expect(mi_interprete.interpretar_salida).to eq "/home/fernando/salida.txt"
+  end
+
 end
