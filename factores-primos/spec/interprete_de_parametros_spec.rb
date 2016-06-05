@@ -3,6 +3,8 @@ require_relative '../model/interprete_de_parametros'
 
 describe 'InterpreteDeParametros' do
 
+  #testeo la parte de la interpretacion del formato	
+  
   it 'deberia retornar quiet cuando se le pasa el parametro --format=quiet y se le pide que se interprete el formato' do
     mi_interprete =  InterpreteDeParametros.new(["--format=quiet"])
     expect(mi_interprete.interpretar_formato).to eq "quiet"
@@ -38,4 +40,11 @@ describe 'InterpreteDeParametros' do
     expect(mi_interprete.interpretar_formato).to eq "quiet"
   end
 
+  #en esta parte voy a testear la interpretacion del orden
+
+  it 'deberia retornar asc cuando se le pasa el parametro --sort=asc y se le pide que se interprete el orden' do
+    mi_interprete =  InterpreteDeParametros.new(["--sort=asc"])
+    expect(mi_interprete.interpretar_orden).to eq "asc"
+  end
+  
 end
