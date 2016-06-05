@@ -7,7 +7,7 @@ class CalculadorDeFactoresPrimos
 		return divisores
 	  #trabajando en este codigo
 	  else
-	    divisor_actual = numero-1
+	    divisor_actual = 2
 	    numero_actual = numero
 	    proceso_terminado = false
 	    while !proceso_terminado
@@ -36,16 +36,14 @@ class CalculadorDeFactoresPrimos
 	  	return true	
 	  end
 	end
-
-
-		
+	
 	#lo tengo que poner como privado	
 	def buscar_divisor_primo(numero_actual, divisor_actual)
-      while divisor_actual > 1
-      	if (numero_actual % divisor_actual) == 0
+      while divisor_actual <= numero_actual
+      	if ((numero_actual % divisor_actual) == 0) && es_primo?(divisor_actual)
           return divisor_actual
         else
-          divisor_actual -= 1
+          divisor_actual += 1
          end
 	  end  
 	end		
