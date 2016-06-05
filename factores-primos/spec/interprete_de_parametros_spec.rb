@@ -33,4 +33,9 @@ describe 'InterpreteDeParametros' do
     expect(mi_interprete.interpretar_formato).to eq "pretty"
   end
 
+  it 'deberia saber identificar que parametros le corresponde cuando se le pide que se interprete el formato (con quiet) y se le pasan varios parametros' do
+    mi_interprete =  InterpreteDeParametros.new(["8", "--format=quiet", "--output-file=salida.txt", "--sort=asc"])
+    expect(mi_interprete.interpretar_formato).to eq "quiet"
+  end
+
 end
