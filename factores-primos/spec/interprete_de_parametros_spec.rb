@@ -22,4 +22,10 @@ describe 'InterpreteDeParametros' do
     mi_interprete =  InterpreteDeParametros.new("--format=QuIEt")
     expect(mi_interprete.interpretar_formato).to eq "quiet"
   end
+
+  it 'deberia retornar por defecto pretty cuando se le pide que se interprete el formato y no se pasa nada' do
+    mi_interprete =  InterpreteDeParametros.new("")
+    expect(mi_interprete.interpretar_formato).to eq "pretty"
+  end
+
 end
