@@ -52,4 +52,9 @@ describe 'InterpreteDeParametros' do
     expect(mi_interprete.interpretar_orden).to eq "des"
   end
   
+  it 'deberia saber identificar que parametros le corresponde cuando se le pide que se interprete el orden (con asc) y se le pasan varios parametros' do
+    mi_interprete =  InterpreteDeParametros.new(["5", "--output-file=salida.txt", "--format=pretty","--sort=asc"])
+    expect(mi_interprete.interpretar_orden).to eq "asc"
+  end
+
 end
