@@ -6,7 +6,11 @@ class InterpreteDeFormato
   end
 
   def interpretar_formato
-  	return "quiet"
+  	if @parametros == "--format=quiet"
+  	  return "quiet"
+    else
+      return "pretty"
+    end
   end
 
 end
