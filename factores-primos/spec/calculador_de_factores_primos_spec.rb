@@ -17,4 +17,9 @@ describe 'CalculadorDeFactoresPrimos' do
     mi_calculador =  CalculadorDeFactoresPrimos.new
     expect(mi_calculador.calcular_divisores_primos(17)).to eq [17]
   end
+
+  it 'deberia retornar [5,5] en calcular_divisores_primos(25)' do
+    mi_calculador =  CalculadorDeFactoresPrimos.new
+    expect(mi_calculador.calcular_divisores_primos(25)).to eq [5,5]
+  end
 end

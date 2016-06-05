@@ -5,13 +5,19 @@ class CalculadorDeFactoresPrimos
 	  if es_primo?(numero)
 	    divisores << numero
 		return divisores
-	  end
-	  divisor_candidato = 2
-	  divisores << divisor_candidato
-	  if numero%divisor_candidato == 0
-	    divisores << divisor_candidato	
+	  #trabajando en este codigo
+	  else
+	    divisor_actual = numero-1
+	    numero_actual = numero
+	    proceso_terminado = false
+	    while !proceso_terminado
+	      divisor_actual = buscar_divisor_primo(numero_actual, divisor_actual)	
+	      numero_actual = numero_actual / divisor_actual
+	      divisores << divisor_actual
+	      proceso_terminado = (numero_actual == 1) 
+	    end
+	    return divisores
 	  end 
-	  return divisores
 	end
 
 	#faltaria ponerlo como metodo privado
@@ -26,11 +32,22 @@ class CalculadorDeFactoresPrimos
 	  		end
 	  		i-=1
 	  		break if i < 2
-	  	end
+	    end
 	  	return true	
 	  end
-
 	end
-		  
-				
+
+
+		
+	#lo tengo que poner como privado	
+	def buscar_divisor_primo(numero_actual, divisor_actual)
+      while divisor_actual > 1
+      	if (numero_actual % divisor_actual) == 0
+          return divisor_actual
+        else
+          divisor_actual -= 1
+         end
+	  end  
+	end		
+
 end
