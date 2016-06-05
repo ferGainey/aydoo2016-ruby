@@ -6,7 +6,7 @@ class InterpreteDeFormato
   end
 
   def interpretar_formato
-  	@parametros.downcase
+  	@parametros.downcase!
   	if @parametros == "--format=quiet"
   	  return "quiet"
     else

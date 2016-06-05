@@ -17,4 +17,9 @@ describe 'InterpreteDeParametros' do
     mi_interprete =  InterpreteDeParametros.new("--format=prEtTY")
     expect(mi_interprete.interpretar_formato).to eq "pretty"
   end
+
+  it 'deberia retornar quiet cuando se le pasa el parametro --format=QuIEt u otra combinacion de mayus y min, y se le pide que se interprete el formato' do
+    mi_interprete =  InterpreteDeParametros.new("--format=QuIEt")
+    expect(mi_interprete.interpretar_formato).to eq "quiet"
+  end
 end
