@@ -73,4 +73,10 @@ describe 'InterpreteDeParametros' do
     mi_interprete =  InterpreteDeSalida.new(["--output-file=/home/fernando/salida.txt"])
     expect(mi_interprete.interpretar_salida).to eq "/home/fernando/salida.txt"
   end
+
+  it 'deberia retornar consola si se le pide que se interprete la salida y no se le indica el tipo en ningun parametro' do
+    mi_interprete =  InterpreteDeSalida.new([""])
+    expect(mi_interprete.interpretar_salida).to eq "consola"
+  end
+
 end
