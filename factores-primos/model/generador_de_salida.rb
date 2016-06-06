@@ -17,7 +17,13 @@ class GeneradorDeSalida
   	  end
   	  texto_generado.gsub!(/x/, numero_a_generar.to_s + ":")
   	  return texto_generado
-  	end
+    elsif @formato == "quiet"
+      texto_generado = ""
+      @divisores.each do |numero_actual|
+        texto_generado += "\n" + numero_actual.to_s
+      end
+    end
+    return texto_generado
   end
 
 end

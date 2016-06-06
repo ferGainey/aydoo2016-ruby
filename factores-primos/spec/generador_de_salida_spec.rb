@@ -8,4 +8,9 @@ describe 'GeneradorDeSalida' do
     expect(mi_generador.aplicar_formato).to eq "Factores primos 360: 2 2 2 3 3 5"
   end
 
+  it 'deberia retornar 2 2 2 3 3 5 (cada numero en una linea), si le aplico el formato quiet a la lista de divisores [2,2,3,5]' do
+    mi_generador =  GeneradorDeSalida.new("quiet", "", "", [2,2,3,5])
+    expect(mi_generador.aplicar_formato).to eq "\n2\n2\n3\n5"
+  end
+
 end
