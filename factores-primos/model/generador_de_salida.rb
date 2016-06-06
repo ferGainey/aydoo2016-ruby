@@ -1,9 +1,8 @@
 class GeneradorDeSalida
   
-  def initialize(tipo_de_formato, tipo_de_orden, tipo_de_salida, lista_de_divisores)
+  def initialize(tipo_de_formato, tipo_de_orden, lista_de_divisores)
   	@formato = tipo_de_formato
   	@orden = tipo_de_orden
-  	@salida = tipo_de_salida
   	@divisores = lista_de_divisores
   end
 
