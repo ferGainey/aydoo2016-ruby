@@ -27,7 +27,7 @@ class CalculadorDeFactoresPrimos
 	  end 
 	end
 
-	#faltaria ponerlo como metodo privado
+	private
 	def es_primo?(numero)
 	  if(numero == 1 || numero == 2)
 	  	return true
@@ -44,7 +44,7 @@ class CalculadorDeFactoresPrimos
 	  end
 	end
 	
-	#lo tengo que poner como privado	
+	private
 	def buscar_divisor_primo(numero_actual, divisor_actual)
       while divisor_actual <= numero_actual
       	if ((numero_actual % divisor_actual) == 0) && es_primo?(divisor_actual)
