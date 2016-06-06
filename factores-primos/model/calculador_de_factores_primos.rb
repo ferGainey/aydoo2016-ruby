@@ -1,23 +1,29 @@
+require_relative '../model/entrada_incorrecta_exception'
+
 class CalculadorDeFactoresPrimos
 
 	#falta modelar las excepciones
 	def calcular_divisores_primos(numero)
-	  divisores = []
-	  if es_primo?(numero)
-	    divisores << numero
-		return divisores
-	  #trabajando en este codigo
-	  else
-	    divisor_actual = 2
-	    numero_actual = numero
-	    proceso_terminado = false
-	    while !proceso_terminado
-	      divisor_actual = buscar_divisor_primo(numero_actual, divisor_actual)	
-	      numero_actual = numero_actual / divisor_actual
-	      divisores << divisor_actual
-	      proceso_terminado = (numero_actual == 1) 
+	  if numero >= 1 
+	    numero = numero.to_i
+	    divisores = []
+	    if es_primo?(numero)
+	      divisores << numero
+		  return divisores
+	    else
+	      divisor_actual = 2
+	      numero_actual = numero
+	      proceso_terminado = false
+	      while !proceso_terminado
+	        divisor_actual = buscar_divisor_primo(numero_actual, divisor_actual)	
+	        numero_actual = numero_actual / divisor_actual
+	        divisores << divisor_actual
+	        proceso_terminado = (numero_actual == 1) 
+	      end
+	      return divisores
 	    end
-	    return divisores
+	  else
+	    raise EntradaIncorrectaException, "El numero que se ingresa tiene que ser mayor a 0"  
 	  end 
 	end
 

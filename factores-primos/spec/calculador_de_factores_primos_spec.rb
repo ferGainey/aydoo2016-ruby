@@ -33,4 +33,9 @@ describe 'CalculadorDeFactoresPrimos' do
     expect(mi_calculador.calcular_divisores_primos(100)).to eq [2,2,5,5]
   end
 
+  it 'debe lanzar una excepcion si se ingresa un numero que sea menor a 1' do
+    mi_calculador = CalculadorDeFactoresPrimos.new
+    expect{mi_calculador.calcular_divisores_primos(-2)}.to raise_exception(EntradaIncorrectaException)
+  end
+
 end

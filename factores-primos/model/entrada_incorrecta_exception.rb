@@ -1,0 +1,4 @@
+
+class EntradaIncorrectaException < Exception
+
+end
