@@ -29,6 +29,8 @@ class GeneradorDeSalida
   def aplicar_orden
   	if @orden == "asc"
   	  @divisores.sort!
+    elsif @orden == "des"
+      @divisores.reverse!
   	end
   	return @divisores
   end
