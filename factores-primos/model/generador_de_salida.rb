@@ -21,6 +21,8 @@ class GeneradorDeSalida
       @divisores.each do |numero_actual|
         texto_generado += numero_actual.to_s + "\n"
       end
+    elsif @formato == "formato no aceptado"
+      texto_generado = "Formato no aceptado. Las opciones posibles son: pretty o quiet."
     end
     return texto_generado
   end
