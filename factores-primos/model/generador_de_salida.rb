@@ -19,7 +19,7 @@ class GeneradorDeSalida
     elsif @formato == "quiet"
       texto_generado = ""
       @divisores.each do |numero_actual|
-        texto_generado += "\n" + numero_actual.to_s
+        texto_generado += numero_actual.to_s + "\n"
       end
     end
     return texto_generado
