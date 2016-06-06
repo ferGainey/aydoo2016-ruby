@@ -26,4 +26,11 @@ class GeneradorDeSalida
     return texto_generado
   end
 
+  def aplicar_orden
+  	if @orden == "asc"
+  	  @divisores.sort!
+  	end
+  	return @divisores
+  end
+
 end
