@@ -40,6 +40,11 @@ describe 'InterpreteDeParametros' do
     expect(mi_interprete.interpretar_formato).to eq "quiet"
   end
 
+  it 'deberia saber identificar cuando se ingresa un tipo de formato no aceptado' do
+    mi_interprete =  InterpreteDeParametros.new(["--format=yerba"])
+    expect(mi_interprete.interpretar_formato).to eq "formato no aceptado"
+  end
+
   #en esta parte voy a testear la interpretacion del orden
 
   it 'deberia retornar asc cuando se le pasa el parametro --sort=asc y se le pide que se interprete el orden' do
