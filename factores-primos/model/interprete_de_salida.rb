@@ -2,11 +2,11 @@
 class InterpreteDeSalida
   
   def initialize(parametros_recibidos)
-  	@parametros = parametros_recibidos
+    @parametros = parametros_recibidos
   end
 
   def interpretar_salida
-  	tipo_de_salida = "consola"
+    tipo_de_salida = "consola"
     @parametros.each do |parametro_actual|
       palabras = parametro_actual.split("=")
       if(palabras.length == 2)
